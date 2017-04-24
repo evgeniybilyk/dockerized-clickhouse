@@ -1,0 +1,15 @@
+version: '2.1'
+
+services:
+
+  db-server:
+    image: yandex/clickhouse-server:latest
+    ulimits:
+      nofile:
+        soft: 262144
+        hard: 262144
+#    volumes:
+#      - /path/to/your/config.xml:/etc/clickhouse-server/config.xml
+
+  db-client:
+    image: yandex/clickhouse-client:latest
