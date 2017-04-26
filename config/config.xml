@@ -59,7 +59,7 @@
     -->
 
     <!-- Listen specified host. use :: (wildcard IPv6 address), if you want to accept connections both with IPv4 and IPv6 from everywhere. -->
-    <!-- <listen_host>::</listen_host> -->
+     <!--<listen_host>::</listen_host>-->
     <listen_host>::1</listen_host>
     <listen_host>127.0.0.1</listen_host>
 
@@ -111,7 +111,7 @@
          Time zone is specified as identifier from IANA time zone database, like UTC or Africa/Abidjan.
          If not specified, system time zone at server startup is used.
     -->
-    <!-- <timezone>Europe/Moscow</timezone> -->
+     <timezone>UTC</timezone>
 
     <!-- Configuration of clusters that could be used in Distributed tables.
          https://clickhouse.yandex/reference_en.html#Distributed
