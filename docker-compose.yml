@@ -5,7 +5,7 @@ services:
   db-server:
     build:
       context: .
-      dockerfile: Dockerfile
+      dockerfile: server/Dockerfile
     ulimits:
       nofile:
         soft: 262144
@@ -13,25 +13,13 @@ services:
     networks:
       - default
 
-#  db-server:
-#    image: yandex/clickhouse-server:latest
-#    tty: true
-#    volumes:
-#      - ./config/config.xml:/etc/clickhouse-server/config.xml
-#      - ./config/users.xml:/etc/clickhouse-server/users.xml
-#      - ./config/config-preprocessed.xml:/etc/clickhouse-server/config-preprocessed.xml
-#      - ./config/users-preprocessed.xml:/etc/clickhouse-server/users-preprocessed.xml
-#    ulimits:
-#      nofile:
-#        soft: 262144
-#        hard: 262144
-#    networks:
-#      - default
-
-#  db-client:
-#    image: yandex/clickhouse-client:latest
-#    networks:
-#      - default
+  db-client:
+    build:
+      context: .
+      dockerfile: client/Dockerfile
+    tty: true
+    networks:
+      - default
 
 networks:
   default:

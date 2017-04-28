@@ -9,7 +9,6 @@ RUN apt-get update && \
     echo $repository | tee /etc/apt/sources.list.d/clickhouse.list && \
     apt-get update && \
     apt-get install --allow-unauthenticated -y clickhouse-server-common=$version && \
-    apt-get install --allow-unauthenticated -y clickhouse-client=$version && \
     apt-get install -y tzdata && \
     rm -rf /var/lib/apt/lists/* /var/cache/debconf && \
     apt-get clean
